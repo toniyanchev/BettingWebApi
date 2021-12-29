@@ -4,16 +4,15 @@ namespace WebApi.Services
 {
     public interface IEventService
     {
+    }
 
-        public class EventService : IEventService
+    public class EventService : IEventService
+    {
+        private readonly AppContext _context;
+
+        public EventService(AppContext context)
         {
-            private readonly AppContext _context;
-
-
-            public EventService(AppContext context)
-            {
-                _context = context;
-            }
+            _context = context;
         }
     }
 }

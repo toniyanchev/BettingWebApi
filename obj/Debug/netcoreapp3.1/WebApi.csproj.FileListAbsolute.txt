@@ -59,3 +59,7 @@ C:\Projects\my_projects\BettingWebApi\obj\Debug\netcoreapp3.1\WebApi.RazorTarget
 C:\Projects\my_projects\BettingWebApi\obj\Debug\netcoreapp3.1\WebApi.dll
 C:\Projects\my_projects\BettingWebApi\obj\Debug\netcoreapp3.1\WebApi.pdb
 C:\Projects\my_projects\BettingWebApi\obj\Debug\netcoreapp3.1\WebApi.genruntimeconfig.cache
+C:\Projects\my_projects\BettingWebApi\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.JsonPatch.dll
+C:\Projects\my_projects\BettingWebApi\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+C:\Projects\my_projects\BettingWebApi\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
+C:\Projects\my_projects\BettingWebApi\obj\Debug\netcoreapp3.1\WebApi.csproj.CopyComplete
