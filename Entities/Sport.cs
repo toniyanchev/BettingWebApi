@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using WebApi.Models;
 
 namespace WebApi.Entities
 {
@@ -7,5 +8,11 @@ namespace WebApi.Entities
         public int Id { get; set; }
         public string Name { get; set; }
         public IList<Event> Events { get; set; }
+
+        public Sport(SportProxy proxy)
+        {
+            Id = proxy.Id;
+            Name = proxy.Name;
+        }
     }
 }

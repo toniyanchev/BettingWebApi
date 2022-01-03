@@ -4,6 +4,10 @@ using System;
 using System.Xml;
 using System.IO;
 using System.Net;
+using System.Xml.Serialization;
+using WebApi.Entities;
+using WebApi.Helpers;
+using WebApi.Models;
 
 namespace WebApi.Services
 {
@@ -46,10 +50,32 @@ namespace WebApi.Services
 
         public dynamic ProcessXmlData()
         {
+            var ser = new Serializer();
+            string path = string.Empty;
+            string xmlInputData = string.Empty;
+            string xmlOutputData = string.Empty;
+
             var xml = DownloadString(@"https://sports.ultraplay.net/sportsxml?clientKey=9C5E796D-4D54-42FD-A535-D7E77906541A&sportId=2357&days=7");
+            xml = xml.Replace("<?xml version=\"1.0\" encoding=\"utf-16\"?>", "<?xml version=\"1.0\"?>");
             File.WriteAllText("test.xml", xml);
 
+            path = Directory.GetCurrentDirectory() + @"\test.xml";
+            xmlInputData = File.ReadAllText(path);
+
+            XmlSports xmlSports = ser.Deserialize<XmlSports>(xmlInputData);
+
+            //DB UPDATES
+
             return null;
+        }
+
+        private void HandleSports(SportProxy[] sports)
+        {
+            Sport obj = new Sport(sports.FirstOrDefault());
+            foreach(var sport in sports)
+            {
+                
+            }
         }
 
         private string DownloadString(string address)
