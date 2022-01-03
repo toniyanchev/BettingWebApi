@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.OpenApi.Models;
 using WebApi.Helpers;
 using WebApi.Services;
 
@@ -29,6 +30,14 @@ namespace WebApi
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
             services.AddScoped<IEventService, EventService>();
+
+            services.AddSwaggerGen(x => {
+                x.SwaggerDoc("v1", new OpenApiInfo
+                {
+                    Title = "BettinWebApi",
+                    Version = "v1"
+                });
+            });
         }
 
         // configure the HTTP request pipeline
@@ -43,6 +52,11 @@ namespace WebApi
                 .AllowAnyHeader());
 
             app.UseEndpoints(x => x.MapControllers());
+
+            app.UseSwagger();
+            app.UseSwaggerUI(x => {
+                x.SwaggerEndpoint("/swagger/v1/swagger.json", "BettingWebApi V1");
+            });
         }
     }
 }
