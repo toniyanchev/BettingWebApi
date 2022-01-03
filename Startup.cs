@@ -30,6 +30,9 @@ namespace WebApi
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
             services.AddScoped<IEventService, EventService>();
+            services.AddScoped<IDataHandlerService, DataHandlerService>();
+
+            services.AddHostedService<DataHandlerService>();
 
             services.AddSwaggerGen(x => {
                 x.SwaggerDoc("v1", new OpenApiInfo
