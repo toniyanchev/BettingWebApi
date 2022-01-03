@@ -10,6 +10,7 @@ namespace WebApi.Entities
         public decimal Value { get; set; }
         public string SpecialValue { get; set; }
 
+        public Odd() { }
         public Odd(OddProxy proxy)
         {
             Id = proxy.Id;

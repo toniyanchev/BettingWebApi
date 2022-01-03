@@ -9,6 +9,7 @@ namespace WebApi.Entities
         public string Name { get; set; }
         public IList<Event> Events { get; set; }
 
+        public Sport() { }
         public Sport(SportProxy proxy)
         {
             Id = proxy.Id;

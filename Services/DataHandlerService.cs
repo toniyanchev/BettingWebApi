@@ -6,24 +6,16 @@ using AppContext = WebApi.Helpers.AppContext;
 
 namespace WebApi.Services
 {
-    public interface IDataHandlerService
+    public class DataHandlerService : IHostedService
     {
-    }
-
-    public class DataHandlerService : IHostedService, IDataHandlerService
-    {
-        private readonly EventService _eventService;
-        private readonly AppContext _context;
         private Timer _timer = null!;
 
         public DataHandlerService()
         {
-            _eventService = new EventService(_context);
         }
 
         public Task StartAsync(CancellationToken cancellationToken)
         {
-            // timer repeates call to RemoveScheduledAccounts every 24 hours.
             _timer = new Timer(
                 HandleData,
                 null,
@@ -43,7 +35,7 @@ namespace WebApi.Services
 
         private void HandleData(object state)
         {
-            _eventService.ProcessXmlData();
+            //_eventService.ProcessXmlData();
         }
     }
 }

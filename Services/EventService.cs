@@ -1,13 +1,11 @@
-using AppContext = WebApi.Helpers.AppContext;
-using System.Linq;
 using System;
-using System.Xml;
 using System.IO;
+using System.Linq;
 using System.Net;
-using System.Xml.Serialization;
 using WebApi.Entities;
 using WebApi.Helpers;
 using WebApi.Models;
+using AppContext = WebApi.Helpers.AppContext;
 
 namespace WebApi.Services
 {
@@ -51,30 +49,85 @@ namespace WebApi.Services
         public dynamic ProcessXmlData()
         {
             var ser = new Serializer();
-            string path = string.Empty;
-            string xmlInputData = string.Empty;
-            string xmlOutputData = string.Empty;
 
             var xml = DownloadString(@"https://sports.ultraplay.net/sportsxml?clientKey=9C5E796D-4D54-42FD-A535-D7E77906541A&sportId=2357&days=7");
             xml = xml.Replace("<?xml version=\"1.0\" encoding=\"utf-16\"?>", "<?xml version=\"1.0\"?>");
             File.WriteAllText("test.xml", xml);
 
-            path = Directory.GetCurrentDirectory() + @"\test.xml";
-            xmlInputData = File.ReadAllText(path);
+            var path = Directory.GetCurrentDirectory() + @"\test.xml";
+            var xmlInputData = File.ReadAllText(path);
 
             XmlSports xmlSports = ser.Deserialize<XmlSports>(xmlInputData);
 
-            //DB UPDATES
+            HandleSports(xmlSports.Sports);
 
             return null;
         }
 
         private void HandleSports(SportProxy[] sports)
         {
-            Sport obj = new Sport(sports.FirstOrDefault());
             foreach(var sport in sports)
             {
-                
+                var obj = new Sport(sport);
+                _context.Sports.Add(obj);
+                _context.SaveChanges();
+
+                HandleEvents(sport.Events, obj);
+            }
+        }
+
+        private void HandleEvents(EventProxy[] events, Sport parent)
+        {
+            foreach(var ev in events)
+            {
+                var obj = new Event(ev);
+                obj.Sport = parent;
+
+                _context.Events.Add(obj);
+                _context.SaveChanges();
+
+                HandleMatches(ev.Matches, obj);
+            }
+        }
+
+        private void HandleMatches(MatchProxy[] matches, Event parent)
+        {
+            foreach (var match in matches)
+            {
+                var obj = new Match(match);
+                obj.Event = parent;
+                obj.Type = _context.MatchTypes.SingleOrDefault(x => x.Id == obj.GetTypeId(match.Type));
+
+                _context.Matches.Add(obj);
+                _context.SaveChanges();
+
+                HandleBets(match.Bets, obj);
+            }
+        }
+
+        private void HandleBets(BetProxy[] bets, Match parent)
+        {
+            foreach (var bet in bets)
+            {
+                var obj = new Bet(bet);
+                obj.Match = parent;
+
+                _context.Bets.Add(obj);
+                _context.SaveChanges();
+
+                HandleOdds(bet.Odds, obj);
+            }
+        }
+
+        private void HandleOdds(OddProxy[] odds, Bet parent)
+        {
+            foreach (var odd in odds)
+            {
+                var obj = new Odd(odd);
+                obj.Bet = parent;
+
+                _context.Odds.Add(obj);
+                _context.SaveChanges();
             }
         }
 

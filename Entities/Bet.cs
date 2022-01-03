@@ -11,6 +11,7 @@ namespace WebApi.Entities
         public bool IsLive { get; set; }
         public IList<Odd> Odds { get; set; }
 
+        public Bet() { }
         public Bet(BetProxy proxy)
         {
             Id = proxy.Id;

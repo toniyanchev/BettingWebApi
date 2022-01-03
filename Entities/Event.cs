@@ -11,6 +11,7 @@ namespace WebApi.Entities
         public bool IsLive { get; set; }
         public IList<Match> Matches { get; set; }
 
+        public Event() { }
         public Event(EventProxy proxy)
         {
             Id = proxy.Id;

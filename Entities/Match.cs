@@ -13,6 +13,7 @@ namespace WebApi.Entities
         public MatchType Type { get; set; }
         public IList<Bet> Bets { get; set; }
 
+        public Match() { }
         public Match(MatchProxy proxy)
         {
             Id = proxy.Id;
