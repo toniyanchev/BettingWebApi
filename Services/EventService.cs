@@ -3,6 +3,7 @@ using System;
 using System.IO;
 using System.Linq;
 using System.Net;
+using System.Threading.Tasks;
 using WebApi.Entities;
 using WebApi.Helpers;
 using WebApi.Models;
@@ -61,43 +62,47 @@ namespace WebApi.Services
 
             XmlSports xmlSports = ser.Deserialize<XmlSports>(xmlInputData);
 
-            HandleSports(xmlSports.Sports);
+            _ = HandleSportsAsync(xmlSports.Sports);
 
             return null;
         }
 
-        private void HandleSports(SportProxy[] sports)
+        private async Task HandleSportsAsync(SportProxy[] sports)
         {
             foreach(var sport in sports)
             {
                 var obj = new Sport(sport);
-                if (!_context.Sports.Any(x => x.OldId == sport.Id))
+                var doesExist = await _context.Sports.AnyAsync(x => x.OldId == sport.Id);
+                if (!doesExist)
                 {
                     _context.Sports.Add(obj);
-                    _context.SaveChanges();
                 }
                 else
                 {
-                    obj = _context.Sports.First(x => x.Id == sport.Id);
+                    obj = await _context.Sports.FirstAsync(x => x.OldId == sport.Id);
                     obj.Name = sport.Name;
 
                     _context.SaveChanges();
                 }
 
-                HandleEvents(sport.Events, obj);
+                if (sport.Events != null)
+                {
+                    _ = HandleEventsAsync(sport.Events, obj);
+                }
             }
+            _context.SaveChanges();
         }
 
-        private void HandleEvents(EventProxy[] events, Sport parent)
+        private async Task HandleEventsAsync(EventProxy[] events, Sport parent)
         {
             foreach(var ev in events)
             {
                 var obj = new Event(ev);
                 obj.Sport = parent;
-                if (!_context.Events.Any(x => x.OldId == ev.Id))
+                var doesExist = await _context.Events.AnyAsync(x => x.OldId == ev.Id);
+                if (!doesExist)
                 {
                     _context.Events.Add(obj);
-                    _context.SaveChanges();
                 }
                 else
                 {
@@ -108,76 +113,85 @@ namespace WebApi.Services
                     _context.SaveChanges();
                 }
 
-                HandleMatches(ev.Matches, obj);
+                if (ev.Matches != null)
+                {
+                    _ = HandleMatchesAsync(ev.Matches, obj);
+                }
             }
+            _context.SaveChanges();
         }
 
-        private void HandleMatches(MatchProxy[] matches, Event parent)
+        private async Task HandleMatchesAsync(MatchProxy[] matches, Event parent)
         {
             foreach (var match in matches)
             {
                 var obj = new Match(match);
                 obj.Event = parent;
-                obj.Type = _context.MatchTypes.SingleOrDefault(x => x.Id == obj.GetTypeId(match.Type));
-
-                if (!_context.Matches.Any(x => x.OldId == match.Id))
+                obj.Type = await _context.MatchTypes.SingleOrDefaultAsync(x => x.Id == obj.GetTypeId(match.Type));
+                var doesExist = await _context.Matches.AnyAsync(x => x.OldId == match.Id);
+                if (!doesExist)
                 {
                     _context.Matches.Add(obj);
-                    _context.SaveChanges();
                 }
                 else
                 {
-                    obj = _context.Matches.First(x => x.Id == match.Id);
+                    obj = _context.Matches.First(x => x.OldId == match.Id);
                     obj.Type = _context.MatchTypes.SingleOrDefault(x => x.Id == obj.GetTypeId(match.Type));
                     obj.Name = match.Name;
 
                     _context.SaveChanges();
                 }
 
-                HandleBets(match.Bets, obj);
+                if (match.Bets != null)
+                {
+                    _ = HandleBetsAsync(match.Bets, obj);
+                }
             }
+            _context.SaveChanges();
         }
 
-        private void HandleBets(BetProxy[] bets, Match parent)
+        private async Task HandleBetsAsync(BetProxy[] bets, Match parent)
         {
             foreach (var bet in bets)
             {
                 var obj = new Bet(bet);
                 obj.Match = parent;
-
-                if (!_context.Bets.Any(x => x.OldId == bet.Id))
+                var doesExist = await _context.Bets.AnyAsync(x => x.OldId == bet.Id);
+                if (!doesExist)
                 {
                     _context.Bets.Add(obj);
-                    _context.SaveChanges();
                 }
                 else
                 {
-                    obj = _context.Bets.First(x => x.Id == bet.Id);
+                    obj = await _context.Bets.FirstAsync(x => x.OldId == bet.Id);
                     obj.Name = bet.Name;
                     obj.IsLive = bet.IsLive;
 
                     _context.SaveChanges();
                 }
 
-                HandleOdds(bet.Odds, obj);
+                if (bet.Odds != null)
+                {
+                    _ = HandleOddsAsync(bet.Odds, obj);
+                }
             }
+            _context.SaveChanges();
         }
 
-        private void HandleOdds(OddProxy[] odds, Bet parent)
+        private async Task HandleOddsAsync(OddProxy[] odds, Bet parent)
         {
             foreach (var odd in odds)
             {
                 var obj = new Odd(odd);
                 obj.Bet = parent;
-
-                if (!_context.Odds.Any(x => x.OldId == odd.Id))
+                var doesExist = await _context.Odds.AnyAsync(x => x.OldId == odd.Id);
+                if (!doesExist)
                 {
                     _context.Odds.Add(obj);
-                    _context.SaveChanges();
                 }
                 else
                 {
-                    obj = _context.Odds.First(x => x.Id == odd.Id);
+                    obj = await _context.Odds.FirstAsync(x => x.OldId == odd.Id);
                     obj.Name = odd.Name;
                     obj.Value = odd.Value;
                     obj.SpecialValue = odd.SpecialValue;
@@ -185,6 +199,7 @@ namespace WebApi.Services
                     _context.SaveChanges();
                 }
             }
+            _context.SaveChanges();
         }
 
         private string DownloadString(string address)

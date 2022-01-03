@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<XmlSports xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" CreateDate="2022-01-03T23:14:20.2599074Z">
+<XmlSports xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" CreateDate="2022-01-03T23:40:13.2739297Z">
   <Sport Name="eSports" ID="2357">
     <Event Name="FIFA, Liga Pro" ID="45981" IsLive="false" CategoryID="8212">
       <Match Name="Inter (amkal official) - FC Jazz (jaz)" ID="2246880" StartDate="2022-01-03T14:35:00" MatchType="PreMatch" />
@@ -1597,29 +1597,12 @@
       </Match>
     </Event>
     <Event Name="FIFA, Live Arena" ID="66554" IsLive="false" CategoryID="8212">
-      <Match Name="Eintracht Frankfurt (Vito) - West Ham United (Stdm)" ID="2247199" StartDate="2022-01-03T23:06:00" MatchType="Live">
-        <Bet Name="Match Odds" ID="35914993" IsLive="true">
-          <Odd Name="1" ID="232670712" Value="3.18" />
-          <Odd Name="X" ID="232670711" Value="2.73" />
-          <Odd Name="2" ID="232670710" Value="2.38" />
-        </Bet>
-        <Bet Name="Goal Handicap" ID="35915023" IsLive="true">
-          <Odd Name="1" ID="232671055" Value="1.79" SpecialBetValue="0.25" />
-          <Odd Name="2" ID="232671054" Value="1.94" SpecialBetValue="0.25" />
-        </Bet>
-        <Bet Name="Goal Handicap" ID="35915024" IsLive="true">
-          <Odd Name="1" ID="232671105" Value="1.74" SpecialBetValue="0.25" />
-          <Odd Name="2" ID="232671104" Value="2.00" SpecialBetValue="0.25" />
-        </Bet>
-        <Bet Name="Total Goals" ID="35914996" IsLive="true">
-          <Odd Name="Over" ID="232671029" Value="1.58" SpecialBetValue="5.5" />
-          <Odd Name="Under" ID="232671028" Value="2.26" SpecialBetValue="5.5" />
-          <Odd Name="Over" ID="232671031" Value="2.00" SpecialBetValue="5.25" />
-          <Odd Name="Under" ID="232671030" Value="1.74" SpecialBetValue="5.25" />
-          <Odd Name="Over" ID="232671099" Value="1.81" SpecialBetValue="5" />
-          <Odd Name="Under" ID="232671098" Value="1.91" SpecialBetValue="5" />
-          <Odd Name="Over" ID="232671101" Value="1.74" SpecialBetValue="5.75" />
-          <Odd Name="Under" ID="232671100" Value="2.00" SpecialBetValue="5.75" />
+      <Match Name="Manchester United (ikross) - Chelsea (Stdm)" ID="2247231" StartDate="2022-01-03T23:25:00" MatchType="Live" />
+      <Match Name="Tottenham Hotspur (ganger_29) - Manchester City (Vito)" ID="2247230" StartDate="2022-01-03T23:26:00" MatchType="Live">
+        <Bet Name="Match Odds" ID="35915156" IsLive="true">
+          <Odd Name="1" ID="232671897" Value="5.46" />
+          <Odd Name="X" ID="232671898" Value="1.65" />
+          <Odd Name="2" ID="232671884" Value="3.23" />
         </Bet>
       </Match>
     </Event>
@@ -1632,28 +1615,28 @@
     <Event Name="Dota 2, DPC CN: Div. 1" ID="69251" IsLive="false" CategoryID="3693">
       <Match Name="Vici Gaming - LBZS" ID="2207779" StartDate="2022-01-04T05:00:00" MatchType="PreMatch">
         <Bet Name="Match Winner" ID="35879813" IsLive="false">
-          <Odd Name="1" ID="232329876" Value="1.30" />
-          <Odd Name="2" ID="232330033" Value="3.43" />
+          <Odd Name="1" ID="232329876" Value="1.31" />
+          <Odd Name="2" ID="232330033" Value="3.39" />
         </Bet>
         <Bet Name="Map Advantage" ID="35879795" IsLive="false">
-          <Odd Name="1" ID="232330019" Value="1.96" SpecialBetValue="-1.5" />
-          <Odd Name="2" ID="232329838" Value="1.82" SpecialBetValue="-1.5" />
+          <Odd Name="1" ID="232330019" Value="1.98" SpecialBetValue="-1.5" />
+          <Odd Name="2" ID="232329838" Value="1.80" SpecialBetValue="-1.5" />
           <Odd Name="1" ID="232329945" Value="1.10" SpecialBetValue="1.5" />
-          <Odd Name="2" ID="232329784" Value="6.75" SpecialBetValue="1.5" />
+          <Odd Name="2" ID="232329784" Value="6.79" SpecialBetValue="1.5" />
         </Bet>
         <Bet Name="Correct Score" ID="35879825" IsLive="false">
           <Odd Name="0:2" ID="232330175" Value="6.50" />
-          <Odd Name="1:2" ID="232329975" Value="5.75" />
-          <Odd Name="2:0" ID="232330032" Value="1.90" />
+          <Odd Name="1:2" ID="232329975" Value="5.50" />
+          <Odd Name="2:0" ID="232330032" Value="1.95" />
           <Odd Name="2:1" ID="232329908" Value="3.50" />
         </Bet>
         <Bet Name="Total Maps Played" ID="35879796" IsLive="false">
-          <Odd Name="Over" ID="232329857" Value="2.35" SpecialBetValue="2.5" />
-          <Odd Name="Under" ID="232329896" Value="1.58" SpecialBetValue="2.5" />
+          <Odd Name="Over" ID="232329857" Value="2.33" SpecialBetValue="2.5" />
+          <Odd Name="Under" ID="232329896" Value="1.59" SpecialBetValue="2.5" />
         </Bet>
         <Bet Name="Winner Map 1" ID="35879826" IsLive="false">
-          <Odd Name="1" ID="232329905" Value="1.39" />
-          <Odd Name="2" ID="232329786" Value="2.92" />
+          <Odd Name="1" ID="232329905" Value="1.40" />
+          <Odd Name="2" ID="232329786" Value="2.91" />
         </Bet>
         <Bet Name="First Blood (Map 1)" ID="35097973" IsLive="false">
           <Odd Name="1" ID="224913017" Value="1.77" />
@@ -1706,7 +1689,7 @@
           <Odd Name="2" ID="232329772" Value="1.88" SpecialBetValue="-10.5" />
           <Odd Name="1" ID="232584397" Value="1.54" SpecialBetValue="-5.5" />
           <Odd Name="2" ID="232584398" Value="2.34" SpecialBetValue="-5.5" />
-          <Odd Name="1" ID="232329892" Value="1.58" SpecialBetValue="-6.5" />
+          <Odd Name="1" ID="232329892" Value="1.59" SpecialBetValue="-6.5" />
           <Odd Name="2" ID="232330108" Value="2.25" SpecialBetValue="-6.5" />
           <Odd Name="1" ID="232330124" Value="1.95" SpecialBetValue="-11.5" />
           <Odd Name="2" ID="232329970" Value="1.78" SpecialBetValue="-11.5" />
@@ -1720,8 +1703,8 @@
           <Odd Name="Under" ID="232329848" Value="1.90" SpecialBetValue="27.5" />
         </Bet>
         <Bet Name="[AwayTeam] Total Kills (Map 1)" ID="35879823" IsLive="false">
-          <Odd Name="Over" ID="232462286" Value="1.87" SpecialBetValue="18.5" />
-          <Odd Name="Under" ID="232462288" Value="1.88" SpecialBetValue="18.5" />
+          <Odd Name="Over" ID="232462286" Value="1.86" SpecialBetValue="18.5" />
+          <Odd Name="Under" ID="232462288" Value="1.89" SpecialBetValue="18.5" />
         </Bet>
         <Bet Name="Odd / Even Kills (Map 1)" ID="35098251" IsLive="false">
           <Odd Name="Odd" ID="224913794" Value="1.88" />
@@ -1740,8 +1723,8 @@
           <Odd Name="2" ID="224912780" Value="2.01" />
         </Bet>
         <Bet Name="Winner Map 2" ID="35879785" IsLive="false">
-          <Odd Name="1" ID="232330023" Value="1.38" />
-          <Odd Name="2" ID="232329866" Value="2.96" />
+          <Odd Name="1" ID="232330023" Value="1.39" />
+          <Odd Name="2" ID="232329866" Value="2.95" />
         </Bet>
         <Bet Name="First Blood (Map 2)" ID="35098202" IsLive="false">
           <Odd Name="1" ID="224913276" Value="1.77" />
@@ -1784,7 +1767,7 @@
           <Odd Name="2" ID="232329879" Value="2.09" SpecialBetValue="-9.5" />
           <Odd Name="1" ID="232329824" Value="2.46" SpecialBetValue="-15.5" />
           <Odd Name="2" ID="232329780" Value="1.52" SpecialBetValue="-15.5" />
-          <Odd Name="1" ID="232329891" Value="2.66" SpecialBetValue="-16.5" />
+          <Odd Name="1" ID="232329891" Value="2.67" SpecialBetValue="-16.5" />
           <Odd Name="2" ID="232330029" Value="1.45" SpecialBetValue="-16.5" />
           <Odd Name="1" ID="232329835" Value="2.29" SpecialBetValue="-14.5" />
           <Odd Name="2" ID="232329946" Value="1.59" SpecialBetValue="-14.5" />
@@ -1793,13 +1776,13 @@
           <Odd Name="1" ID="232330071" Value="2.00" SpecialBetValue="-12.5" />
           <Odd Name="2" ID="232330036" Value="1.77" SpecialBetValue="-12.5" />
           <Odd Name="1" ID="232329873" Value="1.79" SpecialBetValue="-10.5" />
-          <Odd Name="2" ID="232329960" Value="1.98" SpecialBetValue="-10.5" />
+          <Odd Name="2" ID="232329960" Value="1.97" SpecialBetValue="-10.5" />
           <Odd Name="1" ID="232580012" Value="1.56" SpecialBetValue="-6.5" />
           <Odd Name="2" ID="232580014" Value="2.36" SpecialBetValue="-6.5" />
-          <Odd Name="1" ID="232329939" Value="1.88" SpecialBetValue="-11.5" />
-          <Odd Name="2" ID="232329807" Value="1.87" SpecialBetValue="-11.5" />
-          <Odd Name="1" ID="232330079" Value="1.60" SpecialBetValue="-7.5" />
-          <Odd Name="2" ID="232329957" Value="2.27" SpecialBetValue="-7.5" />
+          <Odd Name="1" ID="232329939" Value="1.89" SpecialBetValue="-11.5" />
+          <Odd Name="2" ID="232329807" Value="1.86" SpecialBetValue="-11.5" />
+          <Odd Name="1" ID="232330079" Value="1.61" SpecialBetValue="-7.5" />
+          <Odd Name="2" ID="232329957" Value="2.26" SpecialBetValue="-7.5" />
           <Odd Name="1" ID="232330015" Value="1.65" SpecialBetValue="-8.5" />
           <Odd Name="2" ID="232330034" Value="2.18" SpecialBetValue="-8.5" />
         </Bet>
@@ -8764,13 +8747,13 @@
       </Match>
       <Match Name="Quincy Crew - Undying" ID="2237869" StartDate="2022-01-08T23:00:00" MatchType="PreMatch">
         <Bet Name="Match Winner" ID="35880695" IsLive="false">
-          <Odd Name="1" ID="232337174" Value="2.12" />
-          <Odd Name="2" ID="232336750" Value="1.66" />
+          <Odd Name="1" ID="232337174" Value="2.13" />
+          <Odd Name="2" ID="232336750" Value="1.65" />
         </Bet>
         <Bet Name="Map Advantage" ID="35880673" IsLive="false">
           <Odd Name="1" ID="232336807" Value="1.41" SpecialBetValue="1.5" />
           <Odd Name="2" ID="232336859" Value="2.72" SpecialBetValue="1.5" />
-          <Odd Name="1" ID="232336703" Value="3.82" SpecialBetValue="-1.5" />
+          <Odd Name="1" ID="232336703" Value="3.81" SpecialBetValue="-1.5" />
           <Odd Name="2" ID="232337083" Value="1.23" SpecialBetValue="-1.5" />
         </Bet>
         <Bet Name="Correct Score" ID="35880728" IsLive="false">
@@ -8800,11 +8783,11 @@
           <Odd Name="2" ID="231098243" Value="1.79" SpecialBetValue="15" />
         </Bet>
         <Bet Name="Total Kills (Map 1)" ID="35890916" IsLive="false">
-          <Odd Name="Over" ID="232448115" Value="1.74" SpecialBetValue="46.5" />
+          <Odd Name="Over" ID="232448115" Value="1.73" SpecialBetValue="46.5" />
           <Odd Name="Under" ID="232448080" Value="1.95" SpecialBetValue="46.5" />
           <Odd Name="Over" ID="232448118" Value="1.91" SpecialBetValue="48.5" />
           <Odd Name="Under" ID="232448112" Value="1.77" SpecialBetValue="48.5" />
-          <Odd Name="Over" ID="232448051" Value="1.82" SpecialBetValue="47.5" />
+          <Odd Name="Over" ID="232448051" Value="1.83" SpecialBetValue="47.5" />
           <Odd Name="Under" ID="232448119" Value="1.84" SpecialBetValue="47.5" />
           <Odd Name="Over" ID="232448068" Value="2.22" SpecialBetValue="51.5" />
           <Odd Name="Under" ID="232448063" Value="1.57" SpecialBetValue="51.5" />
@@ -8816,8 +8799,8 @@
           <Odd Name="Under" ID="232448125" Value="2.06" SpecialBetValue="45.5" />
           <Odd Name="Over" ID="232448111" Value="1.58" SpecialBetValue="44.5" />
           <Odd Name="Under" ID="232448042" Value="2.18" SpecialBetValue="44.5" />
-          <Odd Name="Over" ID="232448102" Value="1.51" SpecialBetValue="43.5" />
-          <Odd Name="Under" ID="232448122" Value="2.33" SpecialBetValue="43.5" />
+          <Odd Name="Over" ID="232448102" Value="1.52" SpecialBetValue="43.5" />
+          <Odd Name="Under" ID="232448122" Value="2.32" SpecialBetValue="43.5" />
         </Bet>
         <Bet Name="Total Time (Map 1)" ID="35880696" IsLive="false">
           <Odd Name="Over" ID="232336577" Value="1.95" SpecialBetValue="36" />
@@ -8826,12 +8809,12 @@
         <Bet Name="Kills Advantage (Map 1)" ID="35890911" IsLive="false">
           <Odd Name="1" ID="232448058" Value="1.94" SpecialBetValue="2.5" />
           <Odd Name="2" ID="232448055" Value="1.74" SpecialBetValue="2.5" />
-          <Odd Name="1" ID="232448048" Value="1.57" SpecialBetValue="8.5" />
+          <Odd Name="1" ID="232448048" Value="1.56" SpecialBetValue="8.5" />
           <Odd Name="2" ID="232448049" Value="2.22" SpecialBetValue="8.5" />
-          <Odd Name="1" ID="232448040" Value="1.99" SpecialBetValue="1.5" />
+          <Odd Name="1" ID="232448040" Value="1.98" SpecialBetValue="1.5" />
           <Odd Name="2" ID="232448090" Value="1.71" SpecialBetValue="1.5" />
           <Odd Name="1" ID="232448110" Value="2.03" SpecialBetValue="0.5" />
-          <Odd Name="2" ID="232448067" Value="1.68" SpecialBetValue="0.5" />
+          <Odd Name="2" ID="232448067" Value="1.67" SpecialBetValue="0.5" />
           <Odd Name="1" ID="232448069" Value="1.61" SpecialBetValue="7.5" />
           <Odd Name="2" ID="232448096" Value="2.13" SpecialBetValue="7.5" />
           <Odd Name="1" ID="232448107" Value="1.67" SpecialBetValue="6.5" />
@@ -8843,12 +8826,12 @@
           <Odd Name="1" ID="232448059" Value="2.08" SpecialBetValue="-0.5" />
           <Odd Name="2" ID="232448116" Value="1.64" SpecialBetValue="-0.5" />
           <Odd Name="1" ID="232448113" Value="1.73" SpecialBetValue="5.5" />
-          <Odd Name="2" ID="232448083" Value="1.96" SpecialBetValue="5.5" />
-          <Odd Name="1" ID="232448076" Value="1.87" SpecialBetValue="3.5" />
+          <Odd Name="2" ID="232448083" Value="1.95" SpecialBetValue="5.5" />
+          <Odd Name="1" ID="232448076" Value="1.86" SpecialBetValue="3.5" />
           <Odd Name="2" ID="232448101" Value="1.81" SpecialBetValue="3.5" />
         </Bet>
         <Bet Name="[HomeTeam] Total Kills (Map 1)" ID="35890910" IsLive="false">
-          <Odd Name="Over" ID="232448078" Value="1.87" SpecialBetValue="22.5" />
+          <Odd Name="Over" ID="232448078" Value="1.86" SpecialBetValue="22.5" />
           <Odd Name="Under" ID="232448070" Value="1.81" SpecialBetValue="22.5" />
         </Bet>
         <Bet Name="[AwayTeam] Total Kills (Map 1)" ID="35890912" IsLive="false">
@@ -8885,23 +8868,23 @@
         </Bet>
         <Bet Name="Total Kills (Map 2)" ID="35890917" IsLive="false">
           <Odd Name="Over" ID="232448066" Value="1.71" SpecialBetValue="46.5" />
-          <Odd Name="Under" ID="232448064" Value="1.99" SpecialBetValue="46.5" />
+          <Odd Name="Under" ID="232448064" Value="1.98" SpecialBetValue="46.5" />
           <Odd Name="Over" ID="232448091" Value="1.88" SpecialBetValue="48.5" />
-          <Odd Name="Under" ID="232448046" Value="1.80" SpecialBetValue="48.5" />
+          <Odd Name="Under" ID="232448046" Value="1.79" SpecialBetValue="48.5" />
           <Odd Name="Over" ID="232448086" Value="1.80" SpecialBetValue="47.5" />
           <Odd Name="Under" ID="232448061" Value="1.88" SpecialBetValue="47.5" />
           <Odd Name="Over" ID="232448052" Value="2.18" SpecialBetValue="51.5" />
           <Odd Name="Under" ID="232448124" Value="1.59" SpecialBetValue="51.5" />
           <Odd Name="Over" ID="232448073" Value="2.08" SpecialBetValue="50.5" />
           <Odd Name="Under" ID="232448093" Value="1.64" SpecialBetValue="50.5" />
-          <Odd Name="Over" ID="232448054" Value="1.97" SpecialBetValue="49.5" />
+          <Odd Name="Over" ID="232448054" Value="1.98" SpecialBetValue="49.5" />
           <Odd Name="Under" ID="232448043" Value="1.71" SpecialBetValue="49.5" />
           <Odd Name="Over" ID="232448041" Value="1.63" SpecialBetValue="45.5" />
           <Odd Name="Under" ID="232448109" Value="2.09" SpecialBetValue="45.5" />
           <Odd Name="Over" ID="232448047" Value="1.56" SpecialBetValue="44.5" />
           <Odd Name="Under" ID="232448089" Value="2.22" SpecialBetValue="44.5" />
           <Odd Name="Over" ID="232448108" Value="1.50" SpecialBetValue="43.5" />
-          <Odd Name="Under" ID="232448044" Value="2.36" SpecialBetValue="43.5" />
+          <Odd Name="Under" ID="232448044" Value="2.37" SpecialBetValue="43.5" />
         </Bet>
         <Bet Name="Total Time (Map 2)" ID="35880726" IsLive="false">
           <Odd Name="Over" ID="232336923" Value="2.02" SpecialBetValue="36" />
@@ -8912,10 +8895,10 @@
           <Odd Name="2" ID="232448114" Value="1.74" SpecialBetValue="2.5" />
           <Odd Name="1" ID="232448077" Value="1.57" SpecialBetValue="8.5" />
           <Odd Name="2" ID="232448079" Value="2.22" SpecialBetValue="8.5" />
-          <Odd Name="1" ID="232448075" Value="1.99" SpecialBetValue="1.5" />
+          <Odd Name="1" ID="232448075" Value="1.98" SpecialBetValue="1.5" />
           <Odd Name="2" ID="232448106" Value="1.71" SpecialBetValue="1.5" />
           <Odd Name="1" ID="232448120" Value="2.03" SpecialBetValue="0.5" />
-          <Odd Name="2" ID="232448050" Value="1.68" SpecialBetValue="0.5" />
+          <Odd Name="2" ID="232448050" Value="1.67" SpecialBetValue="0.5" />
           <Odd Name="1" ID="232448121" Value="1.61" SpecialBetValue="7.5" />
           <Odd Name="2" ID="232448060" Value="2.13" SpecialBetValue="7.5" />
           <Odd Name="1" ID="232448100" Value="1.67" SpecialBetValue="6.5" />
@@ -8927,8 +8910,8 @@
           <Odd Name="1" ID="232448082" Value="2.08" SpecialBetValue="-0.5" />
           <Odd Name="2" ID="232448053" Value="1.64" SpecialBetValue="-0.5" />
           <Odd Name="1" ID="232448065" Value="1.73" SpecialBetValue="5.5" />
-          <Odd Name="2" ID="232448071" Value="1.96" SpecialBetValue="5.5" />
-          <Odd Name="1" ID="232448084" Value="1.87" SpecialBetValue="3.5" />
+          <Odd Name="2" ID="232448071" Value="1.95" SpecialBetValue="5.5" />
+          <Odd Name="1" ID="232448084" Value="1.86" SpecialBetValue="3.5" />
           <Odd Name="2" ID="232448105" Value="1.81" SpecialBetValue="3.5" />
         </Bet>
         <Bet Name="[HomeTeam] Total Kills (Map 2)" ID="35890914" IsLive="false">
