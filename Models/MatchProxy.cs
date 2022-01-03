@@ -10,7 +10,6 @@ namespace WebApi.Models
         public int Id { get; set; }
         [XmlAttribute("Name")]
         public string Name { get; set; }
-        [XmlIgnore]
         public EventProxy Event { get; set; }
         [XmlAttribute("StartDate")]
         public DateTime Date { get; set; }

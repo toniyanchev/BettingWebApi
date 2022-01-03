@@ -8,7 +8,6 @@ namespace WebApi.Models
         public int Id { get; set; }
         [XmlAttribute("Name")]
         public string Name { get; set; }
-        //[XmlIgnore]
         public SportProxy Sport { get; set; }
         [XmlAttribute("IsLive")]
         public bool IsLive { get; set; }

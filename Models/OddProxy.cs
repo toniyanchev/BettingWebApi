@@ -8,7 +8,6 @@ namespace WebApi.Models
         public int Id { get; set; }
         [XmlAttribute("Name")]
         public string Name { get; set; }
-        [XmlIgnore]
         public BetProxy Bet { get; set; }
         [XmlAttribute("Value")]
         public decimal Value { get; set; }

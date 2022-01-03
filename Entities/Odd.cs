@@ -9,11 +9,13 @@ namespace WebApi.Entities
         public Bet Bet { get; set; }
         public decimal Value { get; set; }
         public string SpecialValue { get; set; }
+        public int OldId { get; set; }
 
         public Odd() { }
         public Odd(OddProxy proxy)
         {
-            Id = proxy.Id;
+            Id = 0;
+            OldId = proxy.Id;
             Name = proxy.Name;
             Value = proxy.Value;
             SpecialValue = proxy.SpecialValue;

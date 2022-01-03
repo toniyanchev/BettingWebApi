@@ -1,3 +1,4 @@
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.IO;
 using System.Linq;
@@ -14,6 +15,7 @@ namespace WebApi.Services
         dynamic GetDailyMatches();
         dynamic GetMatchById(int id);
         dynamic GetMatchesByType(int typeId);
+        dynamic ProcessXmlData();
     }
 
     public class EventService : IEventService
@@ -69,8 +71,18 @@ namespace WebApi.Services
             foreach(var sport in sports)
             {
                 var obj = new Sport(sport);
-                _context.Sports.Add(obj);
-                _context.SaveChanges();
+                if (!_context.Sports.Any(x => x.OldId == sport.Id))
+                {
+                    _context.Sports.Add(obj);
+                    _context.SaveChanges();
+                }
+                else
+                {
+                    obj = _context.Sports.First(x => x.Id == sport.Id);
+                    obj.Name = sport.Name;
+
+                    _context.SaveChanges();
+                }
 
                 HandleEvents(sport.Events, obj);
             }
@@ -82,9 +94,19 @@ namespace WebApi.Services
             {
                 var obj = new Event(ev);
                 obj.Sport = parent;
+                if (!_context.Events.Any(x => x.OldId == ev.Id))
+                {
+                    _context.Events.Add(obj);
+                    _context.SaveChanges();
+                }
+                else
+                {
+                    obj = _context.Events.First(x => x.OldId == ev.Id);
+                    obj.Name = ev.Name;
+                    obj.IsLive = ev.IsLive;
 
-                _context.Events.Add(obj);
-                _context.SaveChanges();
+                    _context.SaveChanges();
+                }
 
                 HandleMatches(ev.Matches, obj);
             }
@@ -98,8 +120,19 @@ namespace WebApi.Services
                 obj.Event = parent;
                 obj.Type = _context.MatchTypes.SingleOrDefault(x => x.Id == obj.GetTypeId(match.Type));
 
-                _context.Matches.Add(obj);
-                _context.SaveChanges();
+                if (!_context.Matches.Any(x => x.OldId == match.Id))
+                {
+                    _context.Matches.Add(obj);
+                    _context.SaveChanges();
+                }
+                else
+                {
+                    obj = _context.Matches.First(x => x.Id == match.Id);
+                    obj.Type = _context.MatchTypes.SingleOrDefault(x => x.Id == obj.GetTypeId(match.Type));
+                    obj.Name = match.Name;
+
+                    _context.SaveChanges();
+                }
 
                 HandleBets(match.Bets, obj);
             }
@@ -112,8 +145,19 @@ namespace WebApi.Services
                 var obj = new Bet(bet);
                 obj.Match = parent;
 
-                _context.Bets.Add(obj);
-                _context.SaveChanges();
+                if (!_context.Bets.Any(x => x.OldId == bet.Id))
+                {
+                    _context.Bets.Add(obj);
+                    _context.SaveChanges();
+                }
+                else
+                {
+                    obj = _context.Bets.First(x => x.Id == bet.Id);
+                    obj.Name = bet.Name;
+                    obj.IsLive = bet.IsLive;
+
+                    _context.SaveChanges();
+                }
 
                 HandleOdds(bet.Odds, obj);
             }
@@ -126,8 +170,20 @@ namespace WebApi.Services
                 var obj = new Odd(odd);
                 obj.Bet = parent;
 
-                _context.Odds.Add(obj);
-                _context.SaveChanges();
+                if (!_context.Odds.Any(x => x.OldId == odd.Id))
+                {
+                    _context.Odds.Add(obj);
+                    _context.SaveChanges();
+                }
+                else
+                {
+                    obj = _context.Odds.First(x => x.Id == odd.Id);
+                    obj.Name = odd.Name;
+                    obj.Value = odd.Value;
+                    obj.SpecialValue = odd.SpecialValue;
+
+                    _context.SaveChanges();
+                }
             }
         }
 

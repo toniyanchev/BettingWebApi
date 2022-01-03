@@ -10,11 +10,13 @@ namespace WebApi.Entities
         public Match Match { get; set; }
         public bool IsLive { get; set; }
         public IList<Odd> Odds { get; set; }
+        public int OldId { get; set; }
 
         public Bet() { }
         public Bet(BetProxy proxy)
         {
-            Id = proxy.Id;
+            Id = 0;
+            OldId = proxy.Id;
             Name = proxy.Name;
             IsLive = proxy.IsLive;
         }

@@ -1,3 +1,4 @@
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System;
 using System.Threading;
@@ -8,10 +9,12 @@ namespace WebApi.Services
 {
     public class DataHandlerService : IHostedService
     {
+        private readonly IEventService _eventService;
         private Timer _timer = null!;
 
-        public DataHandlerService()
+        public DataHandlerService(IServiceProvider serviceProvider)
         {
+            _eventService = serviceProvider.CreateScope().ServiceProvider.GetRequiredService<IEventService>();
         }
 
         public Task StartAsync(CancellationToken cancellationToken)
@@ -35,7 +38,7 @@ namespace WebApi.Services
 
         private void HandleData(object state)
         {
-            //_eventService.ProcessXmlData();
+            _eventService.ProcessXmlData();
         }
     }
 }

@@ -12,11 +12,13 @@ namespace WebApi.Entities
         public DateTime Date { get; set; }
         public MatchType Type { get; set; }
         public IList<Bet> Bets { get; set; }
+        public int OldId { get; set; }
 
         public Match() { }
         public Match(MatchProxy proxy)
         {
-            Id = proxy.Id;
+            Id = 0;
+            OldId = proxy.Id;
             Name = proxy.Name;
             Date = proxy.Date;
         }
