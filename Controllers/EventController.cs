@@ -14,12 +14,30 @@ namespace WebApi.Controllers
             _eventService = eventService;
         }
 
-        //[HttpGet("get-test")]
-        //public IActionResult Test()
-        //{
-        //    var response = _eventService.Test();
+        [HttpGet("get-daily-matches")]
+        public IActionResult GetDailyMatches()
+        {
+            var response = _eventService.GetDailyMatches();
 
-        //    return Ok(response);
-        //}
+            return Ok(response);
+        }
+
+        [HttpGet("get-match/{id}")]
+        public IActionResult GetMatche(int id)
+        {
+            var response = _eventService.GetMatchById(id);
+
+            return response == null
+                ? NotFound(response)
+                : Ok(response);
+        }
+
+        [HttpGet("get-match-by-type/{typeId}")]
+        public IActionResult GetMatchesByType(int typeId)
+        {
+            var response = _eventService.GetMatchesByType(typeId);
+
+            return Ok(response);
+        }
     }
 }
